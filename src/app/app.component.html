@@ -5,13 +5,17 @@
 </nav>  
 <div class="container">
  
-  <form action="">
+  <form >
     <label for="Quote"><strong>Quote</strong></label>
-    <input type="text"name="Quote" class="form-control"><br>
+    <input type="text"name="Quote" class="form-control" placeholder="Once beaten twice as loud" #quote><br>
     <label for="Author"><strong>Author</strong></label>
-    <input type="text" name="Author" class="form-control"> <br>
+    <input type="text" name="Author" class="form-control" placeholder="Petra" #author> <br>
     <label for="Date"><strong>Date</strong></label>    
-    <input type="date" name="Date" class="form-control" value="Enter Date"> <br>
-    <input type="button" class="btn btn-primary" value="Add Quote">
+    <input type="date" name="Date" class="form-control" value="Enter Date" #date> <br>
+    <input type="button" class="btn btn-primary" value="Add Quote" (click)="addQuote(quote, author, date)">
   </form>
+</div>
+
+<div class="container">
+  <app-quotes *ngFor="let quote of sortedQuotes()" [quotes]="quote"></app-quotes>
 </div>

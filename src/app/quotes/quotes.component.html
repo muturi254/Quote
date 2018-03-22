@@ -1,0 +1,42 @@
+<div class="row row-eq-heigh">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body points text-center">
+        <h1 name="points"  class="display-1">{{ quotes.votes }}</h1>
+        <label for="points"><strong>Points</strong></label>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <blockquote class="blockquote text-right   ">
+              <p class="mb-0">{{ quotes.quotes }}</p>
+              <footer class="blockquote-footer">
+                <cite title="Source Title">{{ quotes.author}}</cite>
+              </footer>
+            </blockquote>
+            <p > 
+              <span class="pull-left"><span>Author: {{ quotes.author}}</span></span>
+              <span class="pull-right" style="padding-left:20px;"><span>Date: </span>{{ quotes.date |date}}</span>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <li class="btn btn-success">
+              <a  (click)="voteUp()">Upvote</a>
+            </li>
+          </div>
+          <div class="col-md-6">
+            <li class="btn btn-danger">
+              <a  (click)="voteDown()">Downvote</a>
+            </li>
+          </div>
+        </div>
+      </div><!-- body card -->
+    </div>
+  </div>
+</div>
